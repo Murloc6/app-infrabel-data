@@ -1,0 +1,14 @@
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX gsp: <http://www.opengis.net/ont/geosparql#>
+
+INSERT {
+    GRAPH <https://data.infrabel.be/data> {
+        ?s mu:uuid ?uuid.
+    }
+} WHERE {
+    GRAPH <https://data.infrabel.be/data> {
+        ?s a gsp:Geometry.
+    }
+    BIND(STRUUID() AS ?uuid)
+}
+
