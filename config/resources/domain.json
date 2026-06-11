@@ -1,7 +1,22 @@
 {
   "version": "0.1",
   "prefixes": {
+    "infrabel": "http://data.europa.eu/949/",
+    "gsp": "http://www.opengis.net/ont/geosparql#"
+
   },
   "resources": {
+    "geometries": {
+      "name": "geometry",
+      "class": "gsp:Geometry",
+      "attributes": {
+        "asWKT": {
+          "type": "string",
+          "predicate": "gsp:asWKT"
+        }
+      },
+      "features": ["include-uri"],
+      "new-resource-base": "http://data.europa.eu/949/"
+    }
   }
 }
