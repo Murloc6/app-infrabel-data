@@ -54,6 +54,10 @@
   (_ -> _)) ; public allows ANY TYPE -> ANY PREDICATE in the direction
             ; of the arrow
 
+(define-graph infrabel ("https://data.infrabel.be/data")
+  (_ -> _)) ; public allows ANY TYPE -> ANY PREDICATE in the direction
+            ; of the arrow
+
 ;; Example:
 ;; (define-graph company ("http://mu.semte.ch/graphs/companies/")
 ;;   ("foaf:OnlineAccount"
@@ -71,6 +75,9 @@
 
 (grant (read write)
        :to-graph public
+       :for-allowed-group "public")
+(grant (read write)
+       :to-graph infrabel
        :for-allowed-group "public")
 
 ;; example:
