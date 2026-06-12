@@ -8,6 +8,9 @@ INSERT {
 } WHERE {
     GRAPH <https://data.infrabel.be/data> {
         ?s a gsp:Geometry.
+        FILTER NOT EXISTS {
+            ?s mu:uuid ?uuid.
+        }
     }
     BIND(STRUUID() AS ?uuid)
 }
