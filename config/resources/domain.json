@@ -2,8 +2,8 @@
   "version": "0.1",
   "prefixes": {
     "infrabel": "http://data.europa.eu/949/",
-    "gsp": "http://www.opengis.net/ont/geosparql#"
-
+    "gsp": "http://www.opengis.net/ont/geosparql#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
   },
   "resources": {
     "geometries": {
@@ -13,6 +13,22 @@
         "asWKT": {
           "type": "string",
           "predicate": "gsp:asWKT"
+        }
+      },
+      "features": ["include-uri"],
+      "new-resource-base": "http://data.europa.eu/949/"
+    },
+    "linear-elements": {
+      "name": "linear-element",
+      "class": "infrabel:LinearElement",
+      "attributes": {
+        "canonical-uri": {
+          "type": "string",
+          "predicate": "infrabel:canonicalURI"
+        },
+        "label": {
+          "type": "string",
+          "predicate": "rdfs:label"
         }
       },
       "features": ["include-uri"],

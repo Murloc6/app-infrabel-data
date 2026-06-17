@@ -1,0 +1,18 @@
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX gsp: <http://www.opengis.net/ont/geosparql#>
+PREFIX infrabel: <http://data.europa.eu/949/>
+
+INSERT {
+    GRAPH <https://data.infrabel.be/data> {
+        ?s mu:uuid ?uuid.
+    }
+} WHERE {
+    GRAPH <https://data.infrabel.be/data> {
+        ?s a infrabel:LinearElement.
+        FILTER NOT EXISTS {
+            ?s mu:uuid ?uuid.
+        }
+    }
+    BIND(STRUUID() AS ?uuid)
+}
+
