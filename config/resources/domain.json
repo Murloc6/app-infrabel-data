@@ -31,6 +31,13 @@
           "predicate": "rdfs:label"
         }
       },
+      "relationships": {
+        "geometries": {
+          "predicate": "gsp:hasGeometry",
+          "target": "geometry",
+          "cardinality": "one"
+        }
+      },
       "features": ["include-uri"],
       "new-resource-base": "http://data.europa.eu/949/"
     }
