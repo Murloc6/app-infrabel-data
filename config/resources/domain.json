@@ -1,7 +1,7 @@
 {
   "version": "0.1",
   "prefixes": {
-    "infrabel": "http://data.europa.eu/949/",
+    "era": "http://data.europa.eu/949/",
     "gsp": "http://www.opengis.net/ont/geosparql#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
   },
@@ -20,11 +20,11 @@
     },
     "linear-elements": {
       "name": "linear-element",
-      "class": "infrabel:LinearElement",
+      "class": "era:LinearElement",
       "attributes": {
         "canonical-uri": {
           "type": "string",
-          "predicate": "infrabel:canonicalURI"
+          "predicate": "era:canonicalURI"
         },
         "label": {
           "type": "string",
