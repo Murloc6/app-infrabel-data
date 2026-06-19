@@ -27,6 +27,9 @@ defmodule Dispatcher do
   match "/linear-elements/*path", @json do
     Proxy.forward conn, path, "http://resource/linear-elements/"
   end
+  match "/net-elements/*path", @json do
+    Proxy.forward conn, path, "http://resource/net-elements/"
+  end
 
   match "/*_", %{ layer: :not_found } do
     send_resp( conn, 404, "Route not found.  See config/dispatcher.ex" )

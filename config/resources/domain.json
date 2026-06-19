@@ -18,9 +18,23 @@
       "features": ["include-uri"],
       "new-resource-base": "http://data.europa.eu/949/"
     },
+    "net-elements": {
+      "name": "net-element",
+      "class": "era:NetElement",
+      "features": ["include-uri"],
+      "new-resource-base": "http://data.europa.eu/949/",
+      "relationships": {
+        "geometries": {
+          "predicate": "gsp:hasGeometry",
+          "target": "geometry",
+          "cardinality": "one"
+        }
+      }
+    },
     "linear-elements": {
       "name": "linear-element",
       "class": "era:LinearElement",
+      "super": ["net-element"],
       "attributes": {
         "canonical-uri": {
           "type": "string",
@@ -29,13 +43,6 @@
         "label": {
           "type": "string",
           "predicate": "rdfs:label"
-        }
-      },
-      "relationships": {
-        "geometries": {
-          "predicate": "gsp:hasGeometry",
-          "target": "geometry",
-          "cardinality": "one"
         }
       },
       "features": ["include-uri"],
