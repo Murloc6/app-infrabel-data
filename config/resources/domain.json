@@ -3,7 +3,8 @@
   "prefixes": {
     "era": "http://data.europa.eu/949/",
     "gsp": "http://www.opengis.net/ont/geosparql#",
-    "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "time": "http://www.w3.org/2006/time#"
   },
   "resources": {
     "geometries": {
@@ -23,6 +24,16 @@
       "class": "era:NetElement",
       "features": ["include-uri"],
       "new-resource-base": "http://data.europa.eu/949/",
+      "attributes": {
+        "begin-validity": {
+          "type": "date",
+          "predicate": "era:validity/time:hasBeginning/time:inXSDDate"
+        },
+        "end-validity": {
+          "type": "date",
+          "predicate": "era:validity/time:hasEnd/time:inXSDDate"
+        }
+      },
       "relationships": {
         "geometries": {
           "predicate": "gsp:hasGeometry",
